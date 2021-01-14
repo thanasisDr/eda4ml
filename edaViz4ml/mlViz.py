@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import seaborn as sns
 import numpy as np
 from scipy.stats import norm
@@ -27,7 +27,7 @@ class edaViz_tab:
         Returns:
             dataframe: descriptive data of the columns
         """
-        return self.df.describe(include = full)
+         return self.df.describe(include = full)
     
     def numeric_cols(self):
         """"Provides the numerical features of the dataset
@@ -112,7 +112,37 @@ class edaViz_tab:
         temp = pd.DataFrame(self.df.describe(include = 'all').T)
         return temp[(temp['count'] >  min_completeness_pct * temp['count'].max()) & (temp['count'] < temp['count'].max())].index.tolist()
     
-   
+    def categorical_to_numeric(self, col, new_col, dictionary, num_type = int):
+        """Converts a categorical column to a numerical one
+
+        Args:
+            col (str): name of the categorical column to be converted
+            new_col (str): name of the new numerical column
+            dictionary (dict) : dictionary that does the mapping between the columns
+            num_type (str): type of the new numeric column
+
+        Returns:
+            None
+        """
+
+        self.df[new_col] = self.df[col].map(dict).astype(num_type)
+    
+    def cols_under_cond(self, new_col, condlist, choicelist):
+        """Converts a categorical column to a numerical one according to a set of conditions
+        e.g. One new feature gets value 1 if another col is positve or -1 if the column is negative.
+        conds = [df.col < 0 , df.col > 0]
+        choices = [-1, 1]
+
+        Args:
+            new_col (str): name of the new column
+            condlist (list) : list of conditions
+            choicelist (list): list of choices
+
+        Returns:
+            None
+        """
+        
+        self.df[new_col] = np.select(condlist, choicelist)
     
     def correlation_plot(self, target = None, top_N = 10, ascending = False):
         """Provides the correlation heatmap between the featues of the dataset
@@ -131,7 +161,7 @@ class edaViz_tab:
         corrmat = self.df.corr()
 
         if target is None:
-            plt.figure(figsize=(12,9))
+            f, ax = plt.subplots(figsize=(12, 9))
             sns.heatmap(corrmat, vmax=.8, square=True)
         else:
             plt.figure(figsize=(10,8))
