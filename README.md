@@ -2,7 +2,7 @@
 
 ## Package Description
 
-eda4ml is a Python module for Explorative Data Analysis (EDA) required in the machine learning process, built on top of Pandas, Seaborn, Scipy and Matplotlib.   
+eda4ml is a Python module for Exploratory Data Analysis (EDA) required in the machine learning process, built on top of Pandas, Seaborn, Scipy and Matplotlib.   
 Inspired by the amazing kaggle notebook 'Comprehensive data exploration with Python' by Pedro Marcelino (https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python)
 
 
@@ -52,7 +52,7 @@ You can check the latest sources with the command:
  - **cols_for_imputation**: Provides the features with missing data (less than 15%) that could be imputed. Another option is to remove the entries 
                         that contain this missing data
     
- - **correlation_plot**: Provides the correlation heatmap between the featues of the dataset when it is invoked without target column 
+ - **correlation_plot**: Provides the correlation heatmap between the featues of the dataset when it is invoked without target column. 
                      Plots the top_N most or less correlated to the target column features when the target argument is defined
 
  - **histograms**: Plots the histograms of a list of features
