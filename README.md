@@ -2,22 +2,28 @@
 
 ## Package Description
 
-eda4ml is a Python module for Explorative Data Analysis (EDA) required in the machine learning process, built on top of Pandas, Seaborn, Scipy and Matplotlib
-Inspired by the amazing kaggle notebook 'Comprehensive data exploration with Python' by Pedro Marcelino.
-source: https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python
+eda4ml is a Python module for Explorative Data Analysis (EDA) required in the machine learning process, built on top of Pandas, Seaborn, Scipy and Matplotlib.
+
+Inspired by the amazing kaggle notebook 'Comprehensive data exploration with Python' by Pedro Marcelino (https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python)
 
 
 
 ## Installation
 
 Dependencies
+
 eda4ml requires:
 
 Python
-Pandas 
-NumPy 
-Seaborn 
-SciPy 
+
+Pandas
+
+NumPy
+
+Seaborn
+
+SciPy
+
 Matplotlib 
 
 
