@@ -38,7 +38,7 @@ You can check the latest sources with the command:
 
  - **describe**: Provides descriptive data for both numerical and categorical features
 
- - **numeric_col**: Provides the numerical features of the dataset
+ - **numeric_cols**: Provides the numerical features of the dataset
 
  - **categorical_cols**: Provides the categorical features of the dataset
 

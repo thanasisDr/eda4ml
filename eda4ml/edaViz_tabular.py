@@ -10,6 +10,19 @@ class edaViz_tab:
     def __init__(self, df):
 
         """ Class providing methods to facilitate the EDA of a dataset.
+        Methods:
+        - describe
+        - numeric_cols
+        - categorical_cols
+        - discrete_possible_cols
+        - categorical_cols_for_dummies
+        - cols_with_missing_data
+        - cols_for_imputation
+        - correlation_plot
+        - histograms
+        - boxplots
+        - scatterplots
+        - normality_check
 
         Attributes:
             df (pandas dataframe) representing the dataset to which we want to apply EDA
